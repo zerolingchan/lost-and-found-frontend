@@ -1,0 +1,95 @@
+<template>
+    <div id="register">
+    <div class="register_title"><router-link to="Register">注册</router-link> | <router-link to="Login">登录</router-link></div>
+    <form class="register-form">
+      <div>
+        <input v-model="registerForm.username" type="text" class="register_input" placeholder="请输入用户名" name="username">
+      </div>
+      <div>
+        <input v-model="registerForm.password" type="password" class="register_input" placeholder="请输入密码" name="password">
+      </div>
+      <div>
+        <button class="register_button" @click="register">注册</button>
+      </div>
+    </form>
+  </div>
+</template>
+
+<script>
+    export default {
+        name: "Register",
+        data() {
+          return {
+            registerForm: {
+              username: '',
+              password: '',
+            }
+          }
+        },
+        methods: {
+          register() {
+            let _this = this;
+          if (this.registerForm.username === '' || this.registerForm.password === '') {
+            alert('账号或密码不能为空!');
+          } else {
+            this.axios({
+              method: 'post',
+              url: '/Login',
+              data: _this.registerForm
+            }).then(res => {
+              console.log(res.data);
+              alert('注册成功');
+            }).catch(error => {
+              alert('注册失败');
+              console.log(error);
+            });
+          }
+          }
+        }
+
+    }
+</script>
+
+<style scoped>
+#register {
+    width: 340px;
+    height: 300px;
+    text-align: center;
+    background: #fff;
+    -webkit-box-shadow: 0 6px 12px 0 rgba(1,1,1,.1);
+    box-shadow: 0 6px 12px 0 rgba(1,1,1,.1);
+    margin: 100px auto 100px auto;
+  }
+  .register_title{
+    height: 30px;
+    color: coral;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .register-form{
+    width: 231px;
+    height: 240px;
+    display: inline-block;
+    border-radius: 6px;
+  }
+  .register_input{
+    width: 230px;
+    height: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+  }
+  .register_button{
+    background: coral;
+    width: 230px;
+    height: 35px;
+    color: #ffff;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+  }
+</style>
