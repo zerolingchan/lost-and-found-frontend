@@ -58,7 +58,7 @@
 
 <style scoped>
 #login {
-    width: 340px;
+    width: 50%;
     height: 300px;
     text-align: center;
     background: #fff;

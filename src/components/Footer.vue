@@ -18,9 +18,8 @@
   background-color: coral;
   color: #ffff;
   font-size: small;
-  height: 100px;
-  margin: 20px;
-  padding-top: 5px;
-  padding-bottom: 15px;
+  width: 100%;
+  padding: 2px;
+  float: bottom;
 }
 </style>
