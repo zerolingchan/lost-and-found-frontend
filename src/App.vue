@@ -3,7 +3,8 @@
     <Header></Header>
     <div class="clear"></div>
     <Home></Home>
-        <!--
+                <!--
+    <AddMessages></AddMessages>
     <LostThings></LostThings>
     <FindThings></FindThings>
     <FindPeople></FindPeople>
@@ -23,9 +24,11 @@
   import FindThings from "./components/FindThings";
   import LostThings from "./components/LostThings";
   import FindPeople from "./components/FindPeople";
+  import AddMessages from "./components/AddMessages";
 export default {
   name: 'App',
   components: {
+    AddMessages,
     FindPeople,
     LostThings,
     FindThings,

@@ -46,7 +46,6 @@
 <style scoped>
 #contain {
     text-align: center;
-    height: 500px;
     background: #fff;
     -webkit-box-shadow: 0 6px 12px 0 rgba(1,1,1,.1);
     box-shadow: 0 6px 12px 0 rgba(1,1,1,.1);
@@ -78,7 +77,8 @@
   }
   .contain_title {
     font-size: 20px;
-    font-weight: bold
+    font-weight: bold;
+    margin-bottom: 5px;
   }
   .messages {
     height: 150px;
@@ -92,7 +92,7 @@
   }
   .release_button {
     background: coral;
-    width: 230px;
+    width: 23%;
     height: 35px;
     color: #ffff;
     padding-top: 8px;
