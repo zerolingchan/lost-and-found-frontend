@@ -1,17 +1,25 @@
 <template>
   <div id="app">
+
     <Header></Header>
+    <router-view></router-view>
     <div class="clear"></div>
+    <Footer></Footer>
+    <!--
+        <router-view name="Header"></router-view>
+    <div class="clear"></div>
+
+
     <Home></Home>
-                <!--
+
     <AddMessages></AddMessages>
     <LostThings></LostThings>
     <FindThings></FindThings>
     <FindPeople></FindPeople>
     <Login></Login>
-    <Register></Register>-->
+    <Register></Register>
     <div class="clear"></div>
-    <Footer></Footer>
+    <Footer></Footer>-->
   </div>
 </template>
 

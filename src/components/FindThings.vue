@@ -4,14 +4,14 @@
       <div class="banner">
         <h4>标题</h4>
         <picture class="picture">图片</picture>
-        <p class="summary">发布类型</p>
-        <p class="summary">发布时间</p>
+        <p class="summary">联系人</p>
+        <p class="summary">详细内容</p>
       </div>
       <div class="banner">
         <h4>标题</h4>
         <picture class="picture">图片</picture>
-        <p class="summary">发布类型</p>
-        <p class="summary">发布时间</p>
+        <p class="summary">联系人</p>
+        <p class="summary">详细内容</p>
       </div>
       <div class="page">
         <ul>

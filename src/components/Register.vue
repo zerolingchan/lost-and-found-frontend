@@ -1,6 +1,8 @@
 <template>
     <div id="register">
-    <div class="register_title"><router-link to="Register">注册</router-link> | <router-link to="Login">登录</router-link></div>
+    <div class="register_title">
+      <router-link to="Register" class="router-link-active">注册</router-link> |
+      <router-link to="Login" class="router-link-active">登录</router-link></div>
     <form class="register-form">
       <div>
         <input v-model="registerForm.username" type="text" class="register_input" placeholder="请输入用户名" name="username">
@@ -67,6 +69,7 @@
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-top: 20px;
   }
   .register-form{
     width: 231px;
@@ -91,5 +94,9 @@
     padding-bottom: 8px;
     margin-bottom: 15px;
     border-radius: 6px;
+  }
+  .router-link-active{
+    text-decoration: none;
+    color: coral;
   }
 </style>

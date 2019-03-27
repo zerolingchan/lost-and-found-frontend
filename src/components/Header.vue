@@ -1,12 +1,12 @@
 <template>
     <header id="header">
-      <div class="header_title">&nbsp;Lost&Found </div>
-      <button class="login_button">登录</button>
+      <div class="header_title"><router-link to="/" class="router-link-active">&nbsp;Lost&Found </router-link></div>
+      <router-link to="Login" ><button class="login_button">登录</button></router-link>
       <div class="tab">
-        <router-link to="LostThings" >失物招领</router-link> |
-        <router-link to="FindThings" >寻物启事</router-link> |
-        <router-link to="FindPeople" >寻人启事</router-link> |
-        <router-link to="Login" >个人中心</router-link>
+        <router-link to="LostThings" class="router-link-active">失物招领</router-link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <router-link to="FindThings" class="router-link-active">寻物启事</router-link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <router-link to="FindPeople" class="router-link-active">寻人启事</router-link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <router-link to="Login" class="router-link-active">个人中心</router-link>
       </div>
     </header>
 </template>
@@ -46,5 +46,9 @@
     margin: 2px;
     border-radius: 6px;
     float: right;
+  }
+  .router-link-active{
+    text-decoration: none;
+    color: #ffff;
   }
 </style>

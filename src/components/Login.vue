@@ -1,6 +1,8 @@
 <template>
   <div id="login">
-    <div class="login_title"><router-link to="Login">登录</router-link> | <router-link to="Register">注册</router-link></div>
+    <div class="login_title">
+      <router-link to="Login" class="router-link-active">登录</router-link> |
+      <router-link to="Register" class="router-link-active">注册</router-link></div>
     <form class="login-form">
       <div>
         <input v-model="loginForm.username" type="text" class="login_input" placeholder="请输入用户名" name="username">
@@ -8,15 +10,11 @@
       <div>
         <input v-model="loginForm.password" type="password" class="login_input" placeholder="请输入密码" name="password">
       </div>
-<!--  <div class="login_foget">
-        <router-link to="/FindPassword" class="login_foget">忘记密码？</router-link>
-      </div>
--->
       <div>
         <button class="login_button" @click="login">登录</button>
       </div>
       <div>
-        <button class="login_button"><router-link to="Home.vue">游客访问</router-link></button>
+        <router-link to="Home.vue"><button class="login_button">游客访问</button></router-link>
       </div>
     </form>
   </div>
@@ -58,7 +56,7 @@
 
 <style scoped>
 #login {
-    width: 50%;
+    width: 340px;
     height: 300px;
     text-align: center;
     background: #fff;
@@ -73,6 +71,7 @@
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-top: 20px;
   }
   .login-form{
     width: 231px;
@@ -88,13 +87,6 @@
     margin-bottom: 20px;
     border-radius: 6px;
   }
-/*  .login_foget{
-    font-size: smaller;
-    margin-bottom: 10px;
-    color: coral;
-    text-align: right;
-  }
-  */
   .login_button{
     background: coral;
     width: 230px;
@@ -104,5 +96,9 @@
     padding-bottom: 8px;
     margin-bottom: 15px;
     border-radius: 6px;
+  }
+  .router-link-active{
+    text-decoration: none;
+    color: coral;
   }
 </style>

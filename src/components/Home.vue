@@ -2,9 +2,9 @@
     <div id="contain">
       <div class="messages">
         <p class="contain_title">发布信息</p>
-        <button class="release_button">发布失物招领</button>
-        <button class="release_button">发布寻物启事</button>
-        <button class="release_button">发布寻人启事</button>
+        <router-link to="AddMessages" @click.native="flushCom"><button class="release_button">发布失物招领</button></router-link>
+        <router-link to="AddMessages"><button class="release_button">发布寻物启事</button></router-link>
+        <router-link to="AddMessages"><button class="release_button">发布寻人启事</button></router-link>
       </div>
       <div class="notice">
         <p class="contain_title">系统公告</p>
@@ -39,7 +39,14 @@
 
 <script>
     export default {
-        name: "Home"
+        name: "Home",
+        methods:{
+	        flushCom:function(){
+	          //router是路由实例,例如:var router = new Router({})
+        //router.go(n)是路由的一个方法，意思是在history记录中前进或者后退多少步，0就表示还是当前，类似window.history.go(n)
+	        this.$router.go(0);  
+	        }
+        }
     }
 </script>
 

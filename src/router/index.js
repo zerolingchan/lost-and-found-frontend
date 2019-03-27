@@ -3,46 +3,50 @@ import Router from 'vue-router'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Home from '@/components/Home'
+import AddMessages from '@/components/AddMessages'
+import LostThings from '@/components/LostThings'
+import FindThings from '@/components/FindThings'
+import FindPeople from '@/components/FindPeople'
 
 Vue.use(Router)
 export default new Router({
   routes: [
-  {
-      path: '/',
-      name: 'Login',
-      component: Login,
-      children: [
-        {
-          path:'/',
-          name:'Register',
-          component:Register
-        }
-      ]
-    },
     {
       path: '/',
-      name: 'Header',
-      component: Header,
-      children: [
-        {
-          path: '/',
-          name: 'Login',
-          component: Login
-        }
-      ]
+      name: 'Home',
+      component: Home,
     },
     {
-      path:'/',
-      name:'Footer',
-      component:Footer
+      path:'/AddMessages',
+      name:'AddMessages',
+      component:AddMessages,
     },
     {
-      path:'/',
-      name:'Home',
-      component:Home
-    }
+      path:'/LostThings',
+      name:'LostThings',
+      component:LostThings,
+     },
+    {
+      path:'/FindThings',
+      name:'FindThings',
+      component:FindThings,
+     },
+    {
+      path:'/FindPeople',
+      name:'FindPeople',
+      component:FindPeople,
+     },
+    {
+      path:'/Login',
+      name:'Login',
+      component:Login,
+     },
+    {
+      path:'/Register',
+      name:'Register',
+      component:Register,
+     },
   ]
 })
 
