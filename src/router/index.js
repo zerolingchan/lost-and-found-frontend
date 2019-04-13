@@ -10,6 +10,7 @@ import FindThings from '@/components/FindThings'
 import FindPeople from '@/components/FindPeople'
 import AdminCenter from '@/components/AdminCenter'
 import CenterSidebar from '@/components/CenterSidebar'
+import AddNotice from '@/components/AddNotice'
 
 Vue.use(Router)
 export default new Router({
@@ -58,6 +59,11 @@ export default new Router({
       path:'/CenterSidebar',
       name:'CenterSidebar',
       component:CenterSidebar,
+    },
+    {
+      path:'/AddNotice',
+      name:'AddNotice',
+      component:AddNotice,
     }
   ]
 })

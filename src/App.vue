@@ -5,21 +5,7 @@
     <router-view></router-view>
     <div class="clear"></div>
     <Footer></Footer>
-    <!--
-        <router-view name="Header"></router-view>
-    <div class="clear"></div>
 
-
-    <Home></Home>
-
-    <AddMessages></AddMessages>
-    <LostThings></LostThings>
-    <FindThings></FindThings>
-    <FindPeople></FindPeople>
-    <Login></Login>
-    <Register></Register>
-    <div class="clear"></div>
-    <Footer></Footer>-->
   </div>
 </template>
 
@@ -34,9 +20,11 @@
   import FindPeople from "./components/FindPeople";
   import AddMessages from "./components/AddMessages";
   import CenterSidebar from "./components/CenterSidebar";
+  import AddNotice from "./components/AddNotice";
 export default {
   name: 'App',
   components: {
+    AddNotice,
     CenterSidebar,
     AddMessages,
     FindPeople,

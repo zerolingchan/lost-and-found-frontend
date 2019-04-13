@@ -105,6 +105,7 @@
   .asideBox{
     height: 100%;
     width: 250px;
+
     margin-bottom: 5px;
   }
   .oneMenu{
