@@ -6,7 +6,7 @@
         <router-link to="LostThings" class="router-link-active">失物招领</router-link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <router-link to="FindThings" class="router-link-active">寻物启事</router-link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <router-link to="FindPeople" class="router-link-active">寻人启事</router-link> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <router-link to="Login" class="router-link-active">个人中心</router-link>
+        <router-link to="AdminCenter" class="router-link-active">个人中心</router-link>
       </div>
     </header>
 </template>

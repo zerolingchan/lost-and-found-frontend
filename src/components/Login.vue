@@ -7,7 +7,7 @@
     </div>
     <div class="login-form">
       <div>
-        <input v-model="loginForm.username" type="text" class="login_input" placeholder="请输入用户名" name="username">
+        <input v-model="loginForm.username" type="text" class="login_input" placeholder="请输入账号" name="username">
       </div>
       <div>
         <input v-model="loginForm.password" type="password" class="login_input" placeholder="请输入密码" name="password">

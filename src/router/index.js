@@ -8,6 +8,8 @@ import AddMessages from '@/components/AddMessages'
 import LostThings from '@/components/LostThings'
 import FindThings from '@/components/FindThings'
 import FindPeople from '@/components/FindPeople'
+import AdminCenter from '@/components/AdminCenter'
+import CenterSidebar from '@/components/CenterSidebar'
 
 Vue.use(Router)
 export default new Router({
@@ -47,6 +49,16 @@ export default new Router({
       name:'Register',
       component:Register,
      },
+    {
+      path:'/AdminCenter',
+      name:'AdminCenter',
+      component:AdminCenter,
+    },
+    {
+      path:'/CenterSidebar',
+      name:'CenterSidebar',
+      component:CenterSidebar,
+    }
   ]
 })
 

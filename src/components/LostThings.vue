@@ -25,8 +25,16 @@
 </template>
 
 <script>
+  import Apiservice from "../service/apiservice"
+
     export default {
-        name: "LostThings"
+        name: "LostThings",
+      data() {
+          return
+      },
+      methods:{
+
+      }
     }
 </script>
 

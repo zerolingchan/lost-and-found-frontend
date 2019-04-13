@@ -33,9 +33,11 @@
   import LostThings from "./components/LostThings";
   import FindPeople from "./components/FindPeople";
   import AddMessages from "./components/AddMessages";
+  import CenterSidebar from "./components/CenterSidebar";
 export default {
   name: 'App',
   components: {
+    CenterSidebar,
     AddMessages,
     FindPeople,
     LostThings,
