@@ -2,15 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
-import Header from '@/components/Header'
-import Home from '@/components/Home'
-import AddMessages from '@/components/AddMessages'
-import LostThings from '@/components/LostThings'
-import FindThings from '@/components/FindThings'
-import FindPeople from '@/components/FindPeople'
-import AdminCenter from '@/components/AdminCenter'
-import CenterSidebar from '@/components/CenterSidebar'
-import AddNotice from '@/components/AddNotice'
+import Home from '@/components/Home/Home'
+import AddMessages from '@/components/Add/AddMessages'
+import LostThings from '@/components/List/LostThings'
+import FindThings from '@/components/List/FindThings'
+import FindPeople from '@/components/List/FindPeople'
+import AdminCenter from '@/components/Center/AdminCenter'
+import AddNotice from '@/components/Add/AddNotice'
+import Article from '@/components/Article/Article'
 
 Vue.use(Router)
 export default new Router({
@@ -56,14 +55,14 @@ export default new Router({
       component:AdminCenter,
     },
     {
-      path:'/CenterSidebar',
-      name:'CenterSidebar',
-      component:CenterSidebar,
-    },
-    {
       path:'/AddNotice',
       name:'AddNotice',
       component:AddNotice,
+    },
+    {
+      path:'/Article',
+      name:'Article',
+      component:Article,
     }
   ]
 })

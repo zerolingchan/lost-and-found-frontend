@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <Header></Header>
     <router-view></router-view>
     <div class="clear"></div>
@@ -10,31 +9,13 @@
 </template>
 
 <script>
-  import Login from './components/Login.vue'
-  import Register from './components/Register.vue'
-  import Footer from "./components/Footer";
-  import Header from "./components/Header";
-  import Home from "./components/Home";
-  import FindThings from "./components/FindThings";
-  import LostThings from "./components/LostThings";
-  import FindPeople from "./components/FindPeople";
-  import AddMessages from "./components/AddMessages";
-  import CenterSidebar from "./components/CenterSidebar";
-  import AddNotice from "./components/AddNotice";
+  import Footer from "./components/Home/Footer";
+  import Header from "./components/Home/Header";
 export default {
   name: 'App',
   components: {
-    AddNotice,
-    CenterSidebar,
-    AddMessages,
-    FindPeople,
-    LostThings,
-    FindThings,
-    Home,
     Header,
     Footer,
-    Login,
-    Register,
   }
 }
 </script>

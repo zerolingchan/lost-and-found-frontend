@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import Apiservice from "../service/apiservice"
+  import Apiservice from "../../service/apiservice"
 
     export default {
         name: "LostThings",
