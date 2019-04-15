@@ -1,6 +1,6 @@
 <template>
   <div class="article-box">
-    <ArtickeContent :article-detail="articleDetail"></ArtickeContent>
+    <ArticleContent :article-detail="articleDetail"></ArticleContent>
     <Like :like-count="articleDetail.like_count" :is-like="articleDetail.isLike"></Like>
     <Prenext :prev-article="prevArticle" :next-article="nextArticle"></Prenext>
     <Comment :comment-list="commentList" :user="user"></Comment>
@@ -9,14 +9,14 @@
 </template>
 
 <script>
-import ArtickeContent from './content.vue'
+import ArticleContent from './content.vue'
 import Comment from './comment.vue'
 import Prenext from './prenext.vue'
 import Like from './like.vue'
 import Scrolltop from './Scrolltop.vue'
 import { mapState,mapActions } from 'vuex'
 export default {
-  components: { ArtickeContent,Like,Prenext,Comment,Scrolltop},
+  components: { ArticleContent,Like,Prenext,Comment,Scrolltop},
   computed: {
     ...mapState({
       articleDetail: ({articleDetail}) => articleDetail.item,

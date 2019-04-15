@@ -13,27 +13,40 @@
         <p class="summary">联系人</p>
         <p class="summary">详细内容</p>
       </div>
-      <div class="page">
-        <ul>
-          <li class="li_class">末页</li>
-          <li class="li_class">下一页</li>
-          <li class="li_class">上一页</li>
-          <li class="li_class">首页</li>
-        </ul>
-      </div>
+      <Pager v-if="!dataChanged" ref="pager" :pageSize="pageSize" :page="curPage" :total="total" @setPage="gotoPage" @setRowNum="changeRowNum" />
     </div>
 </template>
 
 <script>
   import Apiservice from "../../service/apiservice"
+  import Pager from '@/components/List/Pager'
 
     export default {
-        name: "LostThings",
+      name: "LostThings",
       data() {
-          return
+          return{
+            curPage:1,//当前页
+            total:0,//总共页数
+            pageSize:20,//每页记录数
+            dataChanged:false
+          }
+      },
+      components:{
+       "Pager":Pager
       },
       methods:{
+          gotoPage(page){
 
+         },
+         changeRowNum(pageSize){
+
+         },
+        refresh(){//用于刷新组件，需手动调用
+              this.dataChanged = true
+              this.$nextTick(() => {
+                this.dataChanged = false
+                })
+           }
       }
     }
 </script>
@@ -58,17 +71,5 @@
     top: 20px;
     width: 160px;
     height: 120px;
-  }
-  .page {
-    padding: 5px;
-    background-color: #fff;
-    text-align: center;
-    vertical-align: center;
-  }
-  .li_class {
-    display: inline;
-    float: right;
-    margin: 3px;
-    padding: 1px;
   }
 </style>

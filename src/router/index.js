@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Home from '@/components/Home/Home'
-import AddMessages from '@/components/Add/AddMessages'
+import AddArticles from '@/components/Add/AddArticles'
 import LostThings from '@/components/List/LostThings'
 import FindThings from '@/components/List/FindThings'
 import FindPeople from '@/components/List/FindPeople'
@@ -20,9 +20,9 @@ export default new Router({
       component: Home,
     },
     {
-      path:'/AddMessages',
-      name:'AddMessages',
-      component:AddMessages,
+      path:'/AddArticles',
+      name:'AddArticles',
+      component:AddArticles,
     },
     {
       path:'/LostThings',
