@@ -5,7 +5,7 @@
       <router-link to="Login" class="router-link-active">登录</router-link></div>
     <form class="register-form">
       <div>
-        <input v-model="registerForm.username" type="text" class="register_input" placeholder="请输入用户名" name="username">
+        <input v-model="registerForm.username" type="text" class="register_input" placeholder="请输入账号" name="username">
       </div>
       <div>
         <input v-model="registerForm.password" type="password" class="register_input" placeholder="请输入密码" name="password">

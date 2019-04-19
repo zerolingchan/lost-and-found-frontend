@@ -2,9 +2,9 @@
     <div id="contain">
       <div class="messages">
         <p class="contain_title">发布信息</p>
-        <router-link to="AddMessages"><button class="release_button">发布失物招领</button></router-link>
-        <router-link to="AddMessages"><button class="release_button">发布寻物启事</button></router-link>
-        <router-link to="AddMessages"><button class="release_button">发布寻人启事</button></router-link>
+        <router-link to="AddArticles"><button class="release_button">发布失物招领</button></router-link>
+        <router-link to="AddArticles"><button class="release_button">发布寻物启事</button></router-link>
+        <router-link to="AddArticles"><button class="release_button">发布寻人启事</button></router-link>
       </div>
       <div class="notice">
         <p class="contain_title">系统公告</p>
