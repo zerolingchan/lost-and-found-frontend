@@ -5,34 +5,34 @@
     <div>
       <p><label>发布的类型</label></p>
       <p>
-        <select class="from_select">
-          <option value="0">请选择</option>
-          <option>失物招领</option>
-          <option>寻物启事</option>
-          <option>寻人启事</option>
+        <select v-model="PostForm.type" class="from_select">
+          <option disabled value="">请选择</option>
+          <option value="found">失物招领</option>
+          <option value="lost">寻物启事</option>
+          <option value="people">寻人启事</option>
         </select>
       </p>
       <p><label>标题</label></p>
       <p>
-        <input class="from_input" type="text" placeholder="请输入标题">
+        <input v-model="PostForm.title" class="from_input" type="text" placeholder="请输入标题">
       </p>
       <p><label>联系人</label></p>
       <p>
-        <input class="from_input" type="text" placeholder="请输入联系人姓名">
+        <input v-model="PostForm.contact" class="from_input" type="text" placeholder="请输入联系人姓名">
       </p>
       <p><label>联系方式</label></p>
       <p>
-        <input class="from_input" type="tel" placeholder="请输入手机号码">
+        <input v-model="PostForm.phone" class="from_input" type="tel" placeholder="请输入手机号码">
       </p>
       <p><label>详细内容</label></p>
       <p>
-        <textarea class="from_textarea"  placeholder="请具体描述何时何地何事以及物品具体情况"></textarea>
+        <textarea v-model="PostForm.content" class="from_textarea"  placeholder="请具体描述何时何地何事以及物品具体情况"></textarea>
       </p><label>上传图片</label><p>
       <p>
-        <input type="file">
+        <input @change="uploadPicture" type="file">
       </p>
       <p>
-        <button class="submit" type="submit">提交信息</button>
+        <button class="submit" @click="submit">提交信息</button>
       </p>
     </div>
     </div>
@@ -40,8 +40,50 @@
 </template>
 
 <script>
+  import Apiservice from "../../service/apiservice"
     export default {
-        name: "AddArticles"
+        name: "AddArticles",
+      data(){
+          return{
+            PostForm:{
+              type:'',
+              title:'',
+              contact:'',
+              phone:'',
+              content:'',
+              picture:''
+            },
+          }
+      },
+      methods:{
+          uploadPicture(e){
+            let formData = new FormData();
+            formData.append('file', e.target.files[0]);
+            let url = this.$store.state.path + "api/tools/handle_upload_file";
+            let config = {
+              headers:{'Content-Type':'multipart/form-data'}
+             };
+            this.$axios.post(url,formData, config).then(function (response) {
+              console.log(response.data)
+           })
+          },
+          submit(){
+            if (this.PostForm.title === '' || this.PostForm.contact === ''|| this.PostForm.phone === ''|| this.PostForm.content === '') {
+          alert('请填写完全部内容!');
+        } else {
+              //待修改接口，为统一的
+          Apiservice.post.get_lost_post()
+            .then(data => {
+              console.log(data);
+              alert('发布成功');
+            })
+            .catch(error => {
+            alert('发布失败');
+            console.log(error);
+          });
+        }
+          }
+      }
     }
 </script>
 

@@ -5,10 +5,10 @@
       <router-link to="Login" class="router-link-active">登录</router-link></div>
     <form class="register-form">
       <div>
-        <input v-model="registerForm.username" type="text" class="register_input" placeholder="请输入账号" name="username">
-      </div>
-      <div>
+        <input v-model="registerForm.login" type="text" class="register_input" placeholder="请输入账号" name="login">
+        <input v-model="registerForm.nickname" type="text" class="register_input" placeholder="请输入昵称" name="nickname">
         <input v-model="registerForm.password" type="password" class="register_input" placeholder="请输入密码" name="password">
+        <input v-model="registerForm.email" type="text" class="register_input" placeholder="请输入邮箱" name="email">
       </div>
       <div>
         <button class="register_button" @click="register">注册</button>
@@ -18,12 +18,14 @@
 </template>
 
 <script>
+  import Apiservice from "../service/apiservice"
     export default {
         name: "Register",
         data() {
           return {
             registerForm: {
-              username: '',
+              login:'',
+              nickname: '',
               password: '',
             }
           }
@@ -31,14 +33,11 @@
         methods: {
           register() {
             let _this = this;
-          if (this.registerForm.username === '' || this.registerForm.password === '') {
-            alert('账号或密码不能为空!');
+          if (this.registerForm.login === '' || this.registerForm.nickname === '' || this.registerForm.password === '') {
+            alert('账号、昵称、密码不能为空!');
           } else {
-            this.axios({
-              method: 'post',
-              url: '/Login',
-              data: _this.registerForm
-            }).then(res => {
+            Apiservice.user.register(this.registerForm.login, this.registerForm.nickname, this.registerForm.password, this.registerForm.role, this.registerForm.email)
+              .then(res => {
               console.log(res.data);
               alert('注册成功');
             }).catch(error => {
@@ -55,7 +54,7 @@
 <style scoped>
 #register {
     width: 340px;
-    height: 300px;
+    height: 370px;
     text-align: center;
     background: #fff;
     -webkit-box-shadow: 0 6px 12px 0 rgba(1,1,1,.1);

@@ -5,13 +5,13 @@
     <div>
       <p><label>标题</label></p>
       <p>
-        <input class="from_input" type="text" placeholder="请输入标题">
+        <input v-model="NoticeForm.title" class="from_input" type="text" placeholder="请输入标题">
       </p>
       <p><label>详细内容</label></p>
       <p>
-        <textarea class="from_textarea"  placeholder="请输入公告具体内容"></textarea>
+        <textarea v-model="NoticeForm.content" class="from_textarea"  placeholder="请输入公告具体内容"></textarea>
       <p>
-        <button class="submit" type="submit">提交信息</button>
+        <button class="submit" @click="submit">提交信息</button>
       </p>
     </div>
     </div>
@@ -19,8 +19,34 @@
 </template>
 
 <script>
+  import Apiservice from "../../service/apiservice"
     export default {
-        name: "AddNotice"
+        name: "AddNotice",
+      data(){
+        return {
+          NoticeForm: {
+            title: '',
+            content: ''
+          },
+        }
+      },
+      methods:{
+          submit(){
+            if (this.NoticeForm.title === '' || this.NoticeForm.content === '') {
+          alert('标题或内容不能为空!');
+        } else {
+          Apiservice.notice.post_notice(this.NoticeForm.title,this.NoticeForm.content)
+            .then(data => {
+              console.log(data);
+              alert('发布成功');
+            })
+            .catch(error => {
+            alert('发布失败');
+            console.log(error);
+          });
+        }
+          }
+      }
     }
 </script>
 

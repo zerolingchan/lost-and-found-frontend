@@ -11,9 +11,11 @@
 <script>
   import Footer from "./components/Home/Footer";
   import Header from "./components/Home/Header";
+  import AddNotice from "./components/Add/AddNotice";
 export default {
   name: 'App',
   components: {
+    AddNotice,
     Header,
     Footer,
   }

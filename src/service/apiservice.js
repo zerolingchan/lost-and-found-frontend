@@ -40,7 +40,7 @@ const ApiService = {
       return apiUnpack(axios.get('/post', {params: {page: page, per_page: per_page, type: 'lost'}}))
     },
 
-    /** 获取寻物启事文章文章 */
+    /** 获取寻物启事文章 */
     get_found_post(page = 1, per_page = 20) {
       return apiUnpack(axios.get('/post', {params: {page: page, per_page: per_page, type: 'found'}}))
     },

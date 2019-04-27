@@ -10,6 +10,7 @@
         <input placeholder="请输入搜索内容" class="input" @keyup.enter="search">
         <a href="javascript:" class="search-btn" v-on:@click="search">搜索</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <router-link to="Login" ><button class="login_button">登录</button></router-link>
+        <router-link to="Register" ><button class="login_button">注册</button></router-link>
       </div>
     </header>
 </template>
@@ -53,7 +54,6 @@
     padding-bottom: 8px;
     margin: 2px;
     border-radius: 6px;
-    position: absolute;
   }
   .router-link-active{
     text-decoration: none;

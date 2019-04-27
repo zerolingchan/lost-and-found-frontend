@@ -7,7 +7,7 @@
     </div>
     <div class="login-form">
       <div>
-        <input v-model="loginForm.username" type="text" class="login_input" placeholder="请输入账号" name="username">
+        <input v-model="loginForm.login" type="text" class="login_input" placeholder="请输入账号" name="login">
       </div>
       <div>
         <input v-model="loginForm.password" type="password" class="login_input" placeholder="请输入密码" name="password">
@@ -16,8 +16,8 @@
         <button class="login_button" @click="login">登录</button>
       </div>
       <div>
-        <router-link to="Home.vue">
-          <button class="login_button">游客访问</button>
+        <router-link to="/">
+          <button class="login_button" >游客访问</button>
         </router-link>
       </div>
     </div>
@@ -32,17 +32,17 @@
     data() {
       return {
         loginForm: {
-          username: '',
+          login: '',
           password: ''
         },
       }
     },
     methods: {
       login() {
-        if (this.loginForm.username === '' || this.loginForm.password === '') {
+        if (this.loginForm.login === '' || this.loginForm.password === '') {
           alert('账号或密码不能为空!');
         } else {
-          Apiservice.user.login(this.loginForm.username, this.loginForm.password)
+          Apiservice.user.login(this.loginForm.login, this.loginForm.password)
             .then(data => {
               console.log(data);
               alert('登录成功');
