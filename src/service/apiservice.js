@@ -45,6 +45,11 @@ const ApiService = {
       return apiUnpack(axios.get('/post', {params: {page: page, per_page: per_page, type: 'found'}}))
     },
 
+    /** 获取寻人启事文章 */
+    get_people_post(page = 1, per_page = 20) {
+      return apiUnpack(axios.get('/post', {params: {page: page, per_page: per_page, type: 'people'}}))
+    },
+
     /** 获取某文章 */
     get_post(pid) {
       return apiUnpack(axios.get('/post/' + pid))
