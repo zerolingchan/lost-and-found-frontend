@@ -21,20 +21,33 @@
         </router-link>
       </div>
     </div>
+
+    <v-snackbar v-model="snackbar_visible"
+      absolute
+      :right="true"
+      :top="true"
+      :timeout="3000"
+    >
+    {{ snackbar_message }}
+    </v-snackbar>
   </div>
 </template>
 
 <script>
   import Apiservice from "../service/apiservice"
+  import {setUser} from '../util'
+  import Tips from '@/components/common/tips'
 
   export default {
     name: "Login",
     data() {
       return {
         loginForm: {
-          login: '',
-          password: ''
+          username: '12345',
+          password: '456789'
         },
+        snackbar_visible: false,
+        snackbar_message: 'login success',
       }
     },
     methods: {
@@ -44,15 +57,31 @@
         } else {
           Apiservice.user.login(this.loginForm.login, this.loginForm.password)
             .then(data => {
-              console.log(data);
-              alert('登录成功');
+              this.showMessage('登陆成功')
+              setUser(data)
+              // timeout等待一下，不然snackbar显示不了
+              setTimeout(() => this.$router.push('/'), 1000)
             })
             .catch(error => {
-            alert('账号或密码错误');
-            console.log(error);
+              if (error.code == 401)
+                this.showMessage('用户名或密码不正确')
+              else
+                this.showMessage('登陆失败')
           });
         }
+      },
+      /** show dialog with message */
+      showMessage(message) {
+        console.log('showMessage')
+        this.snackbar_message = message
+        this.snackbar_visible = true
+      },
+      test () {
+        this.showMessage('just test')
       }
+    },
+    components: {
+      Tips
     }
   }
 </script>

@@ -23,14 +23,13 @@ const ApiService = {
     },
 
     /** 注册 */
-    register(login, nickname, password, role, email = '') {
-      return apiUnpack(axios.post('/user/login', {
+    register(login, nickname, password, email = '') {
+      return apiUnpack(axios.post('/user/register', qs.stringify({
         login: login,
         password: password,
-        role: role,
         email: email,
         nickname: nickname
-      }))
+      })))
     },
   },
 
