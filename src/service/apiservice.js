@@ -2,11 +2,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 // 解决开发环境下的跨域问题
-if (process.env.NODE_ENV === "development") {
-  axios.defaults.baseURL = '/dev'
-} else {
-  axios.defaults.baseURL = 'http://198.13.50.56'
-}
+axios.defaults.baseURL = '/api'
 
 function apiUnpack(promise) {
   /** 封装请求，如果http status 为200，则解析code是否200，是则数据正常，否则返回reject
